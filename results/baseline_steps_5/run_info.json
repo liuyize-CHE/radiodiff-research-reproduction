@@ -1,0 +1,7 @@
+{
+  "sample_num": 5,
+  "batch_size": 1,
+  "checkpoint": "C:/Users/Lenovo/Desktop/RadioDiff-Research-Assessment/RadioDiff_Reproduction/RadioDiff/model/model-irt.pt",
+  "sampling_timesteps": 5,
+  "seed": 42
+}

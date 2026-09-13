@@ -1,0 +1,25 @@
+# Local environments and caches
+.venv/
+.tools/
+__pycache__/
+*/__pycache__/
+*.py[cod]
+.matplotlib/
+.vscode/
+
+# Local dataset and checkpoints
+data/
+*/data/
+model/
+*/model/
+*.pt
+*.pth
+*.ckpt
+
+# Local generated reports and temporary files
+rendered/
+*.log
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz

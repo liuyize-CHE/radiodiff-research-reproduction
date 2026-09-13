@@ -1,0 +1,112 @@
+data:
+  batch_size: 1
+  name: radio
+  num_workers: 0
+  root: C:/Users/Lenovo/Desktop/RadioDiff-Research-Assessment/RadioDiff_Reproduction/RadioDiff/data/archive/
+model:
+  ckpt_path: null
+  default_scale: true
+  eps: 0.0001
+  first_stage:
+    ckpt_path: null
+    ddconfig:
+      attn_resolutions: []
+      ch: 128
+      ch_mult:
+      - 1
+      - 2
+      - 4
+      double_z: true
+      dropout: 0.0
+      in_channels: 1
+      num_res_blocks: 2
+      out_ch: 1
+      resolution:
+      - 320
+      - 320
+      z_channels: 3
+    embed_dim: 3
+    lossconfig:
+      disc_in_channels: 1
+      disc_start: 50001
+      disc_weight: 0.5
+      kl_weight: 1.0e-06
+      perceptual_weight: 0
+  ignore_keys: []
+  image_size:
+  - 320
+  - 320
+  input_keys:
+  - image
+  - cond
+  loss_type: l2
+  model_name: cond_unet
+  model_type: const_sde
+  objective: pred_noise
+  only_model: false
+  perceptual_weight: 0
+  sampling_timesteps: 5
+  scale_by_softsign: false
+  scale_by_std: true
+  scale_factor: 0.3
+  seed: 123
+  start_dist: normal
+  timesteps: 1000
+  train_sample: -1
+  unet:
+    DPMCARK: false
+    channels: 3
+    cond_dim: 128
+    cond_dim_mults:
+    - 2
+    - 4
+    cond_feature_size:
+    - 80
+    - 80
+    cond_in_dim: 3
+    cond_net: swin
+    cond_pe: false
+    dim: 128
+    dim_mults:
+    - 1
+    - 2
+    - 4
+    - 4
+    fourier_scale: 16
+    num_pos_feats: 128
+    out_mul: 1
+    window_sizes1:
+    - - 8
+      - 8
+    - - 4
+      - 4
+    - - 2
+      - 2
+    - - 1
+      - 1
+    window_sizes2:
+    - - 8
+      - 8
+    - - 4
+      - 4
+    - - 2
+      - 2
+    - - 1
+      - 1
+    without_pretrain: true
+  weighting_loss: false
+sampler:
+  batch_size: 1
+  ckpt_path: C:/Users/Lenovo/Desktop/RadioDiff-Research-Assessment/RadioDiff_Reproduction/RadioDiff/model/model-irt.pt
+  inference_stop_idx: 4
+  sample_num: 5
+  sample_type: slide
+  save_folder: C:/Users/Lenovo/Desktop/RadioDiff-Research-Assessment/RadioDiff_Reproduction/results/seed_123
+  seed: 123
+  stride:
+  - 256
+  - 256
+  use_ema: false
+  use_fp16: false
+  use_timer: true
+  warm_up_steps: 0
